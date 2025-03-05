@@ -1,0 +1,7 @@
+{
+  "samplesheet": "samplesheet.csv",
+  "db": "$.dataset.params.reference.db",
+  "outdir": "$.dataset.dataPath",
+  "sequencer_source": "$.dataset.params.input_options.sequencer_source",
+  "decontaminate_pairs": "$.dataset.params.processing_options.decontaminate_pairs"
+}
