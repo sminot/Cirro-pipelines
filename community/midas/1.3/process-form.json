@@ -1,0 +1,66 @@
+{
+  "form": {
+    "type": "object",
+    "name": "MIDAS3: Identify SNVs and Gene Copy Number Variants from Metagenomes",
+    "properties": {
+      "db": {
+        "type": "object",
+        "title": "Reference Genomes",
+        "properties": {
+          "db": {
+            "type": "string",
+            "title": "Pre-Built Database",
+            "default": "s3://pubweb-references/midas/2024-08-08-midas-uhgg-refdb.tar.gz",
+            "enum": ["s3://pubweb-references/midas/2024-08-08-midas-uhgg-refdb.tar.gz"],
+            "enumNames": ["Unified Human Gastrointestinal Genome (UHGG)"]
+          }
+        }
+      },
+      "analysis": {
+        "type": "object",
+        "title": "Analysis Options",
+        "properties": {
+          "analysis_mode": {
+            "type": "string",
+            "title": "Analysis Mode",
+            "default": "species",
+            "enum": [
+              "species",
+              "genes",
+              "snps"
+            ],
+            "enumNames": [
+              "Species",
+              "Gene Copy Number",
+              "SNPs / SNVs"
+            ]
+          }
+        },
+        "dependencies": {
+          "analysis_mode": {
+            "oneOf": [
+              {
+                "properties": {
+                  "analysis_mode": {"enum": ["species"]},
+                  "word_size": {
+                    "type": "integer",
+                    "title": "Word Size",
+                    "description": "Word size for BLAST search. Use word sizes > 16 for greatest efficiency.",
+                    "default": 28
+                  },
+                  "aln_cov": {
+                    "type": "number",
+                    "title": "Alignment Coverage",
+                    "description": "Discard reads with alignment coverage < ALN_COV. Values between 0-1 accepted.",
+                    "default": 0.75
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "ui": {}
+}

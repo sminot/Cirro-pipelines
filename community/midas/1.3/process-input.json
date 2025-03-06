@@ -1,0 +1,6 @@
+{
+    "db": "$.dataset.params.db.db",
+    "analysis_mode": "$.dataset.params.analysis.analysis_mode",
+    "word_size": "$.dataset.params.analysis.word_size",
+    "aln_cov": "$.dataset.params.analysis.aln_cov",
+}
