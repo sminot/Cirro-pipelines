@@ -1,0 +1,29 @@
+{
+  "id": "process-nf-core-sarek-annotate-3-1",
+  "childProcessIds": [],
+  "dataType": "Genomic Variants - Annotated (nf-core/sarek)",
+  "name": "Variant Annotation (nf-core/sarek)",
+  "desc": "Annotation of DNA variants based on GATK4 best practices (v3.1.1)",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "DNA Sequencing",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-dna-sequencing/#dna-variant-calling-nf-coresarek",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/sarek",
+    "version": "3.1.2"
+  },
+  "usesSampleSheet": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-form.json",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json"
+}

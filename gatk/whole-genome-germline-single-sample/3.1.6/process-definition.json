@@ -1,0 +1,63 @@
+{
+  "id": "process-gatk-whole-genome-germline-single-sample-3_1_6",
+  "childProcessIds": [],
+  "dataType": "Germline Variants (VCF)",
+  "name": "Whole Genome Germline Single Sample (GATK)",
+  "desc": "GATK Best Practices for germline variant discovery v3.1.6 (broadinstitute/warp)",
+  "executor": "CROMWELL",
+  "pipelineTypeOverride": "GATK",
+  "category": "DNA Sequencing",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-dna-sequencing/#gatk-whole-genome-germline-single-sample",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "pipelines/broad/dna_seq/germline/single_sample/wgs/WholeGenomeGermlineSingleSample.wdl",
+    "uri": "broadinstitute/warp",
+    "version": "WholeGenomeReprocessing_v3.1.6"
+  },
+  "usesSampleSheet": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-input.json",
+  "formJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-form.json",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "fileMappingRules": [
+    {
+      "description": "Aligned CRAM",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName.cram",
+          "description": "CRAM",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*).cram$"
+        },
+        {
+          "exampleName": "SampleName.cram.crai",
+          "description": "CRAM Index",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*).cram.crai$"
+        },
+        {
+          "exampleName": "SampleName.cram.md5",
+          "description": "CRAM Checksum",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*).cram.md5$"
+        }
+      ]
+    },
+    {
+      "description": "Genomic Variants",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName.rb.g.vcf.gz",
+          "description": "VCF",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*).rb.g.vcf.gz$"
+        }
+      ]
+    }
+  ]
+}

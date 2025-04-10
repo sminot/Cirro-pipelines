@@ -1,0 +1,42 @@
+{
+  "id": "process-gatk-haplotypecaller-2_3_1",
+  "childProcessIds": [],
+  "dataType": "Germline Variants (VCF)",
+  "name": "Germline Variant Discovery (GATK)",
+  "desc": "Execute GATK4 HaplotypeCaller tool in GVCF mode on a single sample according to GATK Best Practices (GATK/gatk4-germline-snps-indels)",
+  "executor": "CROMWELL",
+  "pipelineTypeOverride": "GATK",
+  "category": "DNA Sequencing",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-dna-sequencing/#gatk-germline-short-variant-discovery",
+  "code": {
+    "repository": "AWS",
+    "script": "haplotypecaller-gvcf-gatk4.wdl",
+    "uri": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/",
+    "version": "https://raw.githubusercontent.com/gatk-workflows/gatk4-germline-snps-indels/2.3.1/haplotypecaller-gvcf-gatk4.wdl"
+  },
+  "usesSampleSheet": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-input.json",
+  "formJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-form.json",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "fileMappingRules": [
+    {
+      "description": "Genomic Variants (GVCF)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName.gvcf",
+          "description": "GVCF",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*).gvcf"
+        }
+      ]
+    }
+  ]
+}
