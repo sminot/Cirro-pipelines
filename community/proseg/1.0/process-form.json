@@ -1,0 +1,49 @@
+{
+    "form": {
+        "required": [
+            "transcriptsFile"
+        ],
+        "properties": {
+            "enforce_connectivity": {
+                "default": true,
+                "description": "Prevents cells from having disconnected voxels",
+                "title": "Enforce Connectivity",
+                "type": "boolean",
+                "value": true
+            },
+            "ignore_z_coord": {
+                "default": false,
+                "description": "Run Proseg in 2D mode ignoring  z-coordinate of transcripts",
+                "title": "2D Mode",
+                "type": "boolean",
+                "value": false
+            },
+            "platform": {
+                "default": "Xenium",
+                "description": "Name of spatial transcriptomics platform",
+                "enum": [
+                    "Xenium",
+                    "Cosmx",
+                    "Merscope"
+                ],
+                "title": "Platform",
+                "type": "string"
+            },
+            "sample_ID": {
+                "default": "",
+                "description": "Name of sample for output",
+                "title": "sampleID",
+                "type": "string"
+            },
+            "transcripts_file": {
+                "default": "",
+                "description": "File with transcript info (gene ID, coordinates etc)",
+                "file": "**/*transcripts.parquet",
+                "pathType": "dataset",
+                "title": "Transcripts File",
+                "type": "string"
+            }
+        }
+    },
+    "ui": {}
+}

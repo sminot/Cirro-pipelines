@@ -1,0 +1,32 @@
+{
+    "id": "proseg-resegment-1-0",
+    "childProcessIds": [],
+    "parentProcessIds": [
+        "xenium",
+        "xeniumranger-resegment-1-0"
+    ],
+    "dataType": "Spatial Transcriptomics (Proseg Output)",
+    "name": "Resegment Cells (Proseg)",
+    "desc": "Segment cells spatially using the Proseg algorithm (Setty Lab - Fred Hutch)",
+    "executor": "NEXTFLOW",
+    "category": "Spatial Transcriptomics",
+    "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-single-cell/#proseg-spatial-transcriptomics",
+    "code": {
+        "repository": "GITHUBPUBLIC",
+        "script": "main.nf",
+        "uri": "settylab/proseg-workflow",
+        "version": "eff5dcc"
+    },
+    "allowMultipleSources": false,
+    "usesSampleSheet": false,
+    "computeDefaults": [
+        {
+            "executor": "NEXTFLOW",
+            "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+            "name": "Default"
+        }
+    ],
+    "paramMapJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-input.json",
+    "formJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-form.json",
+    "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json"
+}
