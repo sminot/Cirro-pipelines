@@ -1,0 +1,29 @@
+{
+  "id": "ingest_dicom",
+  "childProcessIds": [],
+  "name": "DICOM",
+  "desc": "Images in DICOM format",
+  "executor": "INGEST",
+  "documentationUrl": "https://en.wikipedia.org/wiki/DICOM",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "DICOM Files",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName.dcm",
+          "description": "DICOM (.dcm)",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*).dcm"
+        }
+      ]
+    }
+  ]
+}

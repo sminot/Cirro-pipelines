@@ -1,0 +1,32 @@
+{
+  "id": "efd573d9-749b-473b-99a3-74ad82b84426",
+  "childProcessIds": [
+    "process-hutch-maddd-seq-1_0",
+    "process-hutch-fastqc-1_0"
+  ],
+  "name": "MADDD-seq (FASTQ)",
+  "desc": "FASTQ files generated from duplex genomes sequencing",
+  "executor": "INGEST",
+  "documentationUrl": "",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "FASTQ Files",
+      "min": 1,
+      "fileNamePatterns": [
+        { 
+        "exampleName": "SampleName.fastq.gz", 
+        "description": "FASTQs", 
+        "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.fastq\\.gz"
+        }
+      ]
+    }
+  ]
+}

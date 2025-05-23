@@ -1,0 +1,33 @@
+{
+  "id": "curated_metagenomic_data",
+  "childProcessIds": [
+    "differential-abundance-CMD"
+  ],
+  "name": "Curated Metagenomic Data",
+  "desc": "Data tables produced by the curatedMetagenomicData project",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-microbial-analysis#curated-metagenomic-data",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileRequirementsMessage": "",
+  "fileMappingRules": [
+    {
+      "description": "Curated Metagenomic Data",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "<study>.<metric>",
+          "description": "Metagenomic Profile Data",
+          "sampleMatchingPattern": ".*\\..*"
+        }
+      ]
+    }
+  ]
+}

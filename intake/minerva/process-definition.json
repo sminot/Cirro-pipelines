@@ -1,0 +1,31 @@
+{
+  "id": "minerva",
+  "childProcessIds": [],
+  "name": "Minerva Story",
+  "desc": "Interactive display of large image data using Minerva Story, a narrative image viewer for web hosting",
+  "executor": "INGEST",
+  "documentationUrl": "https://www.minerva.im/overview/",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "Exhibit (JSON)",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "exhibit.json",
+          "description": "Exhibit (JSON)",
+          "sampleMatchingPattern": "exhibit.json"
+        }
+      ]
+    }
+  ]
+}
+

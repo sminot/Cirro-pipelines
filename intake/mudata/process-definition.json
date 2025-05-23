@@ -1,0 +1,32 @@
+{
+  "id": "mudata-h5mu",
+  "childProcessIds": [
+    "hutch-scvi-citeseq-1-0"
+  ],
+  "name": "MuData (h5mu)",
+  "desc": "Muon multimodal dataset in h5mu format",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-single-cell/",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileRequirementsMessage": "",
+  "fileMappingRules": [
+    {
+      "description": "Multimodal Datasets",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "dataset.h5mu",
+          "description": "h5mu",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.h5mu"
+        }
+      ]
+    }
+  ]
+}

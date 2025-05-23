@@ -1,0 +1,29 @@
+{
+  "id": "ingest_biom",
+  "childProcessIds": [],
+  "name": "Biological Observation Matrix (BIOM)",
+  "desc": "Tabular data summarizing biological observations in BIOM format",
+  "executor": "INGEST",
+  "documentationUrl": "https://biom-format.org/",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Biological Observation Matrix (BIOM)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "datasetName.biom",
+          "description": "BIOM",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.biom"
+        }
+      ]
+    }
+  ]
+}

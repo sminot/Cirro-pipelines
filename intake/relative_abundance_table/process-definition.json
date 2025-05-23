@@ -1,0 +1,32 @@
+{
+  "id": "relative-abundance-table",
+  "childProcessIds": [
+    "differential-abundance-table"
+  ],
+  "name": "Relative Abundance Table (CSV)",
+  "desc": "Tabular file summarizing relative abundance data",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-statistical-analysis/#relative-abundance-table",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileRequirementsMessage": "",
+  "fileMappingRules": [
+    {
+      "description": "Relative Abundance (CSV)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "relative_abundance.csv",
+          "description": "Relative Abundance CSV",
+          "sampleMatchingPattern": ".*\\.csv"
+        }
+      ]
+    }
+  ]
+}

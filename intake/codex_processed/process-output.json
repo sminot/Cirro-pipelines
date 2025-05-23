@@ -1,0 +1,41 @@
+{
+    "commands": [
+      {
+        "command": "hot.SpatialImage",
+        "params": {
+          "url": "https://help.codex.bio/codex/",
+          "source": "$data_directory/[baseName]/stitched/cyc001_ch001[channel].tif",
+          "target": "{baseName}_stitched.zarr",
+          "name": "{baseName} Image",
+          "desc": "PhenoCycler (CODEX) multichannel image ({baseName})",
+          "filetype": "tif-codex"
+        }
+      },
+      {
+        "command": "hot.SpatialImage",
+        "params": {
+          "url": "https://help.codex.bio/codex/",
+          "source": "$data_directory/[baseName].qptiff",
+          "target": "{baseName}.zarr",
+          "name": "{baseName}",
+          "desc": "PhenoCycler (CODEX) multichannel image ({baseName})",
+          "filetype": "tif"
+        }
+      },
+      {
+        "command": "hot.SpatialImage",
+        "params": {
+          "url": "https://help.codex.bio/codex/",
+          "source": "$data_directory/[subFolder]/[baseName].qptiff",
+          "target": "{subFolder}.{baseName}.zarr",
+          "name": "{subFolder}/{baseName}",
+          "desc": "PhenoCycler (CODEX) multichannel image ({baseName})",
+          "filetype": "tif"
+        }
+      },
+      {
+        "command": "hot.Manifest",
+        "params": {}
+      }
+    ]
+  }

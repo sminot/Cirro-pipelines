@@ -1,0 +1,42 @@
+{
+  "id": "single-cell-h5",
+  "childProcessIds": [
+    "hutch-azimuth-1-0"
+  ],
+  "name": "Single-Cell Dataset (Loom, Anndata, or Seurat)",
+  "desc": "Single-cell datasets saved in Loom (.loom), Anndata (.h5ad), or Seurat (.h5seurat) formats",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-single-cell/",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "fileRequirementsMessage": "",
+  "fileMappingRules": [
+    {
+      "description": "Single-Cell Datasets",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "dataset.loom",
+          "description": "Loom",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.loom"
+        },
+        {
+          "exampleName": "dataset.h5ad",
+          "description": "Anndata",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.h5ad"
+        },
+        {
+          "exampleName": "dataset.h5seurat",
+          "description": "Seurat",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.h5seurat"
+        }
+      ]
+    }
+  ]
+}

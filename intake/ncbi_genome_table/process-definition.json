@@ -1,0 +1,34 @@
+{
+  "id": "ncbi_genome_table",
+  "childProcessIds": [
+    "hutch-gig-map-download-genes-1-0",
+    "hutch-gig-map-download-genomes-1-0",
+    "hutch-gig-map-build-pangenome-from-ncbi-1-0"
+  ],
+  "name": "NCBI Genome Table (TSV/CSV)",
+  "desc": "Tabular summary of genomes available in the NCBI Genome Portal",
+  "executor": "INGEST",
+  "documentationUrl": "https://www.ncbi.nlm.nih.gov/datasets/genome/",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Genome Table",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "ncbi_datasets.csv or prokaryotes.csv",
+          "description": "Recognized extensions: tsv & csv",
+          "sampleMatchingPattern": ".*\\.[tc]sv"
+        }
+      ]
+    }
+  ]
+}

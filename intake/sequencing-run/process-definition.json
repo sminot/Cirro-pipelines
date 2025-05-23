@@ -1,0 +1,19 @@
+{
+  "id": "sequencing-run",
+  "childProcessIds": [
+    "process-hutch-interop-qc-1_0",
+    "process-bbi-dmux"
+  ],
+  "name": "Illumina Sequencing Run",
+  "desc": "Illumina sequencing run output (raw BCLs)",
+  "executor": "INGEST",
+  "documentationUrl": "",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": ""
+}

@@ -1,0 +1,37 @@
+{
+  "id": "microbial_genome_fasta",
+  "childProcessIds": [
+    "process-hutch-prokka-1-14",
+    "process-hutch-pgap-1_0",
+    "process-nf-core-ampliseq-asv-input-2-4-0",
+    "hutch-anvio-pangenome-1_0",
+    "hutch-gig-map-align-genomes-1-0",
+    "hutch_octapus_1_0",
+    "hutch-gig-map-build-pangenome-custom-1-0"
+  ],
+  "name": "Microbial Genome (FASTA)",
+  "desc": "Nucleotide sequence of one or more microbial genomes",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-microbial-analysis",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Microbial Genome",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName.fasta.gz",
+          "description": "Recognized extensions: fasta, fsa, fna, fa",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.(fasta|fsa|fna|fa)(\\.gz|)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "nanpore_pod5",
+  "childProcessIds": [
+    "process-epi2me-labs-wf-basecalling-1"
+  ],
+  "name": "Nanopore Sequencing (POD5)",
+  "desc": "Oxford Nanopore Technologies (ONT) sequencing data in POD5 format",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-nanopore-sequencing/#pod5-file-format",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Nanopore Sequencing (POD5)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName.pod5",
+          "description": "POD5",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.pod5"
+        }
+      ]
+    }
+  ]
+}

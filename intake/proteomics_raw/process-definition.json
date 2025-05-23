@@ -1,0 +1,31 @@
+{
+  "id": "proteomics_thermo_raw",
+  "childProcessIds": [
+    "process-nf-core-quantms-dda-lfq-1_0"
+  ],
+  "name": "Proteomics (Thermo Scientific RAW)",
+  "desc": "Identification of protein fragments by mass spectrometry on the Thermo Scientific Orbitrap platform",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-proteomics/",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Proteomics (Thermo Scientific RAW)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "Sample.raw",
+          "description": "RAW",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.raw"
+        }
+      ]
+    }
+  ]
+}

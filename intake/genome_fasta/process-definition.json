@@ -1,0 +1,31 @@
+{
+  "id": "genome_fasta",
+  "childProcessIds": [
+    "process-hutch-spaceranger-mkref-1-0"
+  ],
+  "name": "Nucleotide Sequences (FASTA)",
+  "desc": "Genomic sequence(s) in nucleotide FASTA format",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-dna-sequencing",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Nucleotide Sequences",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName.fasta.gz",
+          "description": "Recognized extensions: fasta, fsa, fna, fa",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.(fasta|fsa|fna|fa)(\\.gz|)"
+        }
+      ]
+    }
+  ]
+}

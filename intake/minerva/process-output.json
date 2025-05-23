@@ -1,0 +1,32 @@
+{
+  "commands": [
+      {
+          "command": "hot.Minerva",
+          "params": {
+            "source": "$data_directory/exhibit.json",
+            "target": "minerva.json"
+          }
+      },
+      {
+          "command": "hot.Minerva",
+          "params": {
+            "source": "$data_directory/[folder]/exhibit.json",
+            "target": "{folder}.minerva.json"
+          }
+      },
+      {
+          "command": "hot.Minerva",
+          "params": {
+            "source": "$data_directory/[folderA]/[folderB]/exhibit.json",
+            "target": "{folderA}.{folderB}.minerva.json"
+          }
+      },
+      {
+          "command": "hot.Minerva",
+          "params": {
+            "source": "$data_directory/[folderA]/[folderB]/[folderC]/exhibit.json",
+            "target": "{folderA}.{folderB}.{folderC}.minerva.json"
+          }
+      }
+  ]
+}

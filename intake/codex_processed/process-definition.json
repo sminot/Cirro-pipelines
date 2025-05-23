@@ -1,0 +1,50 @@
+{
+  "id": "codex_processed",
+  "childProcessIds": [
+    "process-hutch-mcmicro-1-0",
+    "hutch-qupath-1_0"
+  ],
+  "name": "CODEX Images (Processed)",
+  "desc": "Processed image data produced by the CODEX platform (qpTIFF)",
+  "executor": "INGEST",
+  "documentationUrl": "",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "Image Files",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        { 
+          "exampleName": "*.qptiff", 
+          "description": "Image (qpTIFF)", 
+          "sampleMatchingPattern": ".*/[\\S ]*.qptiff"
+        },
+        { 
+          "exampleName": "*.tif", 
+          "description": "Image (TIF)", 
+          "sampleMatchingPattern": ".*/[\\S ]*.tif"
+        }
+      ]
+    },
+    {
+      "description": "Channel Names",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        { 
+          "exampleName": "channelNames.txt", 
+          "description": "Channel Names", 
+          "sampleMatchingPattern": "channelNames.txt"
+        }
+      ]
+    }
+  ]
+}

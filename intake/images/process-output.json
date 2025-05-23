@@ -1,0 +1,56 @@
+{
+    "commands": [
+      {
+        "command": "hot.Image",
+        "params": {
+          "url": "<DOCS_SITE>",
+          "source": "$data_directory/[baseName]",
+          "target": "{baseName}.ome.tiff",
+          "name": "{baseName}",
+          "desc": "Image",
+          "filetype": "bioformats",
+          "suffixes": [".lif", ".nd2", ".ims", ".tiff", ".tif", ".qptiff", ".svs", ".scn", ".czi", ".lsm", ".ndpi"]
+        }
+      },
+      {
+        "command": "hot.Image",
+        "params": {
+          "url": "<DOCS_SITE>",
+          "source": "$data_directory/[subFolder]/[baseName]",
+          "target": "{subFolder}.{baseName}.ome.tiff",
+          "name": "{subFolder}/{baseName}",
+          "desc": "Image",
+          "filetype": "bioformats",
+          "suffixes": [".lif", ".nd2", ".ims", ".tiff", ".tif", ".qptiff", ".svs", ".scn", ".czi", ".lsm", ".ndpi"]
+        }
+      },
+      {
+        "command": "hot.Image",
+        "params": {
+          "url": "<DOCS_SITE>",
+          "source": "$data_directory/[subFolder1]/[subFolder2]/[baseName]",
+          "target": "{subFolder1}.{subFolder2}.{baseName}.ome.tiff",
+          "name": "{subFolder1}/{subFolder2}/{baseName}",
+          "desc": "Image",
+          "filetype": "bioformats",
+          "suffixes": [".lif", ".nd2", ".ims", ".tiff", ".tif", ".qptiff", ".svs", ".scn", ".czi", ".lsm", ".ndpi"]
+        }
+      },
+      {
+        "command": "hot.Image",
+        "params": {
+          "url": "<DOCS_SITE>",
+          "source": "$data_directory/[subFolder1]/[subFolder2]/[subFolder3]/[baseName]",
+          "target": "{subFolder1}.{subFolder2}.{subFolder3}.{baseName}.ome.tiff",
+          "name": "{subFolder1}/{subFolder2}/{subFolder3}/{baseName}",
+          "desc": "Image",
+          "filetype": "bioformats",
+          "suffixes": [".lif", ".nd2", ".ims", ".tiff", ".tif", ".qptiff", ".svs", ".scn", ".czi", ".lsm", ".ndpi"]
+        }
+      },
+      {
+        "command": "hot.Manifest",
+        "params": {}
+      }
+    ]
+  }

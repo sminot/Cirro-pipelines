@@ -1,0 +1,43 @@
+{
+  "id": "ingest_cellranger",
+  "childProcessIds": [
+    "hutch-azimuth-1-0",
+    "hutch-scanpy-qc-1_0"
+  ],
+  "name": "CellRanger Analysis Output",
+  "desc": "Processed data analyzed by CellRanger",
+  "executor": "INGEST",
+  "documentationUrl": "",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "Feature Matrix (10X h5)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "sampleName_feature_bc_matrix.h5",
+          "description": "Matrix H5",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)_feature_bc_matrix\\.h5"
+        }
+      ]
+    },
+    {
+      "description": "Filtered Feature Matrix (10X h5)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "sampleName_filtered_feature_bc_matrix.h5",
+          "description": "Matrix H5",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)_filtered_feature_bc_matrix\\.h5"
+        }
+      ]
+    }
+  ]
+}

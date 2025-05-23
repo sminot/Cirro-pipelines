@@ -1,0 +1,38 @@
+{
+  "id": "crisprfq-d101-43d4-8205-3b53883b3a8a",
+  "childProcessIds": [
+    "process-hutch-magic_count-1_0",
+    "process-hutch-magic_flute-1_0"
+  ],
+  "name": "CRISPR Screens (FASTQ)",
+  "desc": "FASTQ files generated from sequencing CRISPR sgRNA libraries",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-targeted-sequencing/#crispr-screen-analysis",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileRequirementsMessage": "",
+  "fileMappingRules": [
+    {
+      "description": "Treatment and Control Files",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "treatments/SampleName.fastq.gz",
+          "description": "Treatment FASTQs (fastq.gz or fq.gz)",
+          "sampleMatchingPattern": "treatments/(?P<sampleName>[\\S ]*)\\.(fq|fastq)\\.gz"
+        },
+        {
+          "exampleName": "controls/SampleName.fastq.gz",
+          "description": "Control FASTQs (fastq.gz or fq.gz)",
+          "sampleMatchingPattern": "controls/(?P<sampleName>[\\S ]*)\\.(fq|fastq)\\.gz"
+        }
+      ]
+    }
+  ]
+}

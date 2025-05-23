@@ -1,0 +1,50 @@
+{
+  "id": "vcf",
+  "childProcessIds": [
+    "process-nf-core-sarek-annotate-3-1",
+    "process-hutch-funcotator-1-0",
+    "omics-nvidia-parabricks-bam2fq2bam-wgs-5x-1-0",
+    "omics-nvidia-parabricks-bam2fq2bam-wgs-30x-1-0",
+    "omics-nvidia-parabricks-bam2fq2bam-wgs-50x-1-0",
+    "omics-nvidia-parabricks-fq2bam-wgs-5x-1-0",
+    "omics-nvidia-parabricks-fq2bam-wgs-30x-1-0",
+    "omics-nvidia-parabricks-fq2bam-wgs-50x-1-0",
+    "omics-nvidia-parabricks-germline-deepvariant-wgs-5x-1-0",
+    "omics-nvidia-parabricks-germline-deepvariant-wgs-30x-1-0",
+    "omics-nvidia-parabricks-germline-deepvariant-wgs-50x-1-0",
+    "omics-nvidia-parabricks-germline-haplotypecaller-wgs-5x-1-0",
+    "omics-nvidia-parabricks-germline-haplotypecaller-wgs-30x-1-0",
+    "omics-nvidia-parabricks-germline-haplotypecaller-wgs-50x-1-0",
+    "omics-nvidia-parabricks-somatic-mutect2-wgs-50x-1-0",
+    "omics-sentieon-somatic-wes-1-0",
+    "omics-sentieon-somatic-wgs-1-0",
+    "process-hutch-indelpred-1-0"
+  ],
+  "name": "Genomic Variants (VCF)",
+  "desc": "Detailed summary of genomic variants in VCF format",
+  "executor": "INGEST",
+  "documentationUrl": "https://en.wikipedia.org/wiki/Variant_Call_Format",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Genomic Variants (VCF)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "Sample.vcf.gz",
+          "description": "VCF",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.vcf\\.gz"
+
+        }
+      ]
+    }
+  ]
+}
+

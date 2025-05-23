@@ -1,0 +1,86 @@
+{
+  "id": "xenium",
+  "childProcessIds": [
+    "xeniumranger-resegment-1-0",
+    "hutch-xenium-export-seurat-1"
+  ],
+  "name": "Spatial Transcriptomics (Xenium)",
+  "desc": "In situ gene expression analysis results from the 10X Xenium platform",
+  "executor": "INGEST",
+  "documentationUrl": "https://www.10xgenomics.com/platforms/xenium",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "Cell Feature Matrix (h5ad)",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "cell_feature_matrix.h5",
+          "description": "Cell Feature Matrix",
+          "sampleMatchingPattern": "cell_feature_matrix.h5"
+        }
+      ]
+    },
+    {
+      "description": "Cells",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "cells.zarr.zip",
+          "description": "Cells",
+          "sampleMatchingPattern": "cells.zarr.zip"
+
+        }
+      ]
+    },
+    {
+      "description": "Analysis",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "analysis.zarr.zip",
+          "description": "Analysis",
+          "sampleMatchingPattern": "analysis.zarr.zip"
+
+        }
+      ]
+    },
+    {
+      "description": "Transcripts",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "transcripts.zarr.zip",
+          "description": "Transcripts",
+          "sampleMatchingPattern": "transcripts.zarr.zip"
+
+        }
+      ]
+    },
+    {
+      "description": "Morphology",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "morphology.ome.tif",
+          "description": "Morphology",
+          "sampleMatchingPattern": "morphology.ome.tif"
+
+        }
+      ]
+    }
+  ]
+}
+

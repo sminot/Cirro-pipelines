@@ -1,0 +1,41 @@
+{
+  "id": "proteome_discoverer",
+  "childProcessIds": [],
+  "name": "Proteome Discoverer Results",
+  "desc": "Analysis files produced using the Thermo Scientific Proteome Discoverer software",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-proteomics/",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Proteome Discoverer Results",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "Output.pdResult",
+          "description": "Proteome Discoverer Files",
+          "sampleMatchingPattern": "[\\S ]*.pd*"
+        }
+      ]
+    },
+    {
+      "description": "Supporting Files",
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "Output.pdf",
+          "description": "Any other additional files",
+          "sampleMatchingPattern": "[\\S ]*.*"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "human-cell-atlas",
+  "childProcessIds": [],
+  "name": "Human Cell Atlas Dataset",
+  "desc": "A Dataset Downloaded From the Human Cell Atlas",
+  "executor": "INGEST",
+  "documentationUrl": "",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": ""
+}

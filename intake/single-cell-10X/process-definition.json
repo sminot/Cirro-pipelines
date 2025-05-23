@@ -1,0 +1,60 @@
+{
+  "id": "single-cell-10X",
+  "childProcessIds": [
+    "process-hutch-cellranger-gex-1-0",
+    "process-hutch-cellranger-vdj-1-0",
+    "process-hutch-cellranger-multi-1-0",
+    "process-hutch-cellranger-flex-1-0",
+    "process-hutch-cellranger-arc-count-1-0",
+    "process-hutch-cellranger-hashtagging-1-0",
+    "process-hutch-fastqc-1_0",
+    "process-hutch-spaceranger-count-1-0",
+    "omics-scrnaseq-starsolo-1-0",
+    "omics-scrnaseq-salmon-alevin-fry-1-0",
+    "omics-scrnaseq-kallistobustools-1-0",
+    "hutch-upload-sra-ftp"
+  ],
+  "name": "10X Single-Cell (FASTQ)",
+  "desc": "FASTQ files generated from the 10X single-cell sequencing platform",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-single-cell/",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileRequirementsMessage": "",
+  "fileMappingRules": [
+    {
+      "description": "FASTQ - Unmatched Barcodes",
+      "isSample": false,
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "Undetermined_S0_R1_001.fastq.gz",
+          "description": "FASTQ (No Barcode Match)",
+          "sampleMatchingPattern": "Undetermined\\S*\\.fastq\\.gz"
+        }
+      ]
+    },
+    {
+      "description": "Paired FASTQs (with associated index reads)",
+      "min": 2,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName_S1_L001_R1_001.fastq.gz",
+          "description": "FASTQ (Illumina Format - with lane)",
+          "sampleMatchingPattern": "(?P<sampleName>\\S*)_S(?P<libraryIndex>\\S*)_L(?P<lane>\\S*)_(?P<readType>I|R)(?P<read>1|2|3|4)_001\\.fastq\\.gz"
+        },
+        {
+          "exampleName": "SampleName_S1_R1_001.fastq.gz",
+          "description": "FASTQ (Illumina Format - no lane)",
+          "sampleMatchingPattern": "(?P<sampleName>\\S*)_S(?P<libraryIndex>\\S*)_(?P<readType>R|I)(?P<read>1|2|3|4)_001\\.fastq\\.gz"
+        }
+      ]
+    }
+  ]
+}

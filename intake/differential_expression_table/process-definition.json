@@ -1,0 +1,32 @@
+{
+  "id": "differential-expression-table",
+  "childProcessIds": [
+    "process-hutch-gene-set-enrichment-1_0"
+  ],
+  "name": "Differential Expression Results (CSV)",
+  "desc": "Tabular data summarizing differential expression analysis results",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-statistical-analysis/#differential-expression-analysis",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileRequirementsMessage": "",
+  "fileMappingRules": [
+    {
+      "description": "Differential Expression Results (CSV)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "Results.csv",
+          "description": "Results CSV",
+          "sampleMatchingPattern": ".*csv"
+        }
+      ]
+    }
+  ]
+}

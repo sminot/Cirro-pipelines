@@ -1,0 +1,37 @@
+{
+  "id": "codex_raw",
+  "childProcessIds": [
+    "hutch-qupath-1_0"
+  ],
+  "name": "CODEX Images (raw)",
+  "desc": "Unprocessed image data produced by the CODEX platform (TIFF)",
+  "executor": "INGEST",
+  "documentationUrl": "",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Image Files",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        {
+          "exampleName": "*.tif", 
+          "description": "Image (TIF)", 
+          "sampleMatchingPattern": "[\\S ]*.tif"
+          },
+          {
+          "exampleName": "*.tar", 
+          "description": "Image (TAR)", 
+          "sampleMatchingPattern": "[\\S ]*.tar"
+          }
+      ]
+    }
+  ]
+}

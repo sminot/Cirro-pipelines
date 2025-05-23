@@ -1,0 +1,32 @@
+{
+  "id": "microbial_genome_fastp",
+  "childProcessIds": [
+    "process-hutch-eggnog-mapper-2-1-7",
+    "hutch-gig-map-build-gene-catalog-1-0"
+  ],
+  "name": "Microbial Proteins (FASTA)",
+  "desc": "Amino acid sequence of one or more microbial genes",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-microbial-analysis",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Microbial Proteins",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName.faa.gz",
+          "description": "Recognized extensions: fastp, faa, fnp, fa",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.(fastp|faa|fnp|fa)(\\.gz|)"
+        }
+      ]
+    }
+  ]
+}

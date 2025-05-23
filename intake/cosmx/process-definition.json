@@ -1,0 +1,51 @@
+{
+  "id": "cosmx",
+  "childProcessIds": [],
+  "name": "CosMx Single-Cell Imaging",
+  "desc": "Spatial transcriptomics data produced by the NanoString CosMx platform",
+  "executor": "INGEST",
+  "documentationUrl": "https://nanostring.com/products/cosmx-spatial-molecular-imager/",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Count Matrix (csv)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "sampleName_exprMat_file.csv.gz",
+          "description": "Count Matrix",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)_exprMat_file.csv.gz"
+        }
+      ]
+    },
+    {
+      "description": "Metadata (csv)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "sampleName_metadata_file.csv.gz",
+          "description": "Metadata",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)_metadata_file.csv.gz"
+        }
+      ]
+    },
+    {
+      "description": "FOV Positions (csv)",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "sampleName_fov_positions_file.csv.gz",
+          "description": "FOV Positions",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)_fov_positions_file.csv.gz"
+        }
+      ]
+    }
+  ]
+}

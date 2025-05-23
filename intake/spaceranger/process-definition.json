@@ -1,0 +1,17 @@
+{
+  "id": "ingest_spaceranger",
+  "childProcessIds": [],
+  "name": "Visium Spatial Transcriptomics",
+  "desc": "Spatial transcriptomics analysis results from the 10X Visium platform",
+  "executor": "INGEST",
+  "documentationUrl": "",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "fileMappingRules": []
+}

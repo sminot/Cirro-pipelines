@@ -1,0 +1,53 @@
+{
+    "commands": [
+      {
+        "command": "hot.AnnDataZarr",
+        "params": {
+          "url": "https://www.10xgenomics.com/support/software/space-ranger",
+          "source": "$data_directory/**filtered_feature_bc_matrix.h5",
+          "target": "filtered_feature_bc_matrix.zarr",
+          "name": "Spatial Transcriptomics (Visium)",
+          "desc": "Summary of spatial distribution of gene expression",
+          "filetype": "h5-visium",
+          "sourceDirectories": [
+            "",
+            "outs/"
+          ]
+        }
+      },
+      {
+        "command": "hot.AnnDataZarr",
+        "params": {
+          "url": "https://www.10xgenomics.com/support/software/space-ranger",
+          "source": "$data_directory/**[sampleName]_filtered_feature_bc_matrix.h5",
+          "target": "{sampleName}_filtered_feature_bc_matrix.zarr",
+          "name": "{sampleName} - Spatial Transcriptomics (Visium)",
+          "desc": "Summary of spatial distribution of gene expression for {sampleName}",
+          "filetype": "h5-visium",
+          "sourceDirectories": [
+            "",
+            "outs/"
+          ]
+        }
+      },
+      {
+        "command": "hot.AnnDataZarr",
+        "params": {
+          "url": "https://www.10xgenomics.com/support/software/space-ranger",
+          "source": "$data_directory/[sampleName]/**filtered_feature_bc_matrix.h5",
+          "target": "{sampleName}_filtered_feature_bc_matrix.zarr",
+          "name": "{sampleName} - Spatial Transcriptomics (Visium)",
+          "desc": "Summary of spatial distribution of gene expression for {sampleName}",
+          "filetype": "h5-visium",
+          "sourceDirectories": [
+            "",
+            "outs/"
+          ]
+        }
+      },
+      {
+        "command": "hot.Manifest",
+        "params": {}
+      }
+    ]
+  }

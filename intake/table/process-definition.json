@@ -1,0 +1,31 @@
+{
+  "id": "table_csv_tsv",
+  "childProcessIds": [
+    "process-hutch-differential-expression-custom-1_0"
+  ],
+  "name": "Tables (TSV/CSV)",
+  "desc": "Tabular data in TSV or CSV format",
+  "executor": "INGEST",
+  "documentationUrl": "",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "Table",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "table.csv or table.tsv",
+          "description": "Recognized extensions: tsv & csv",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)\\.[CcTt][Ss][Vv]"
+        }
+      ]
+    }
+  ]
+}

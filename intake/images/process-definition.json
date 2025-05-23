@@ -1,0 +1,35 @@
+{
+  "id": "images",
+  "childProcessIds": [
+    "hutch-qupath-1_0",
+    "process-hutch-qupath-stardist-1_0",
+    "process-hutch-cellpose-1_0",
+    "hutch-sage-artist-1-0"
+  ],
+  "name": "Images",
+  "desc": "Any collection of image files",
+  "executor": "INGEST",
+  "documentationUrl": "",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "Images",
+      "min": 1,
+      "isSample": false,
+      "fileNamePatterns": [
+        { 
+        "exampleName": "*", 
+        "description": "Any Image", 
+        "sampleMatchingPattern": "[\\S ]*"
+        }
+      ]
+    }
+  ]
+}
