@@ -21,7 +21,7 @@
     "properties": {
       "ref_genome": {
         "title": "Reference Genome",
-        "description": "The workflow is currently configured to work with GRCh38 (ENSEMBL v102). If you want additional references constructed, please contact hutchdatacore@fredhutch.org",
+        "description": "The workflow is currently configured to work with GRCh38 (ENSEMBL v102).",
         "type": "object",
         "required": [
           "genome"

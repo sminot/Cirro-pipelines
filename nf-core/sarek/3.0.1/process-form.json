@@ -18,7 +18,7 @@
   },
   "form": {
     "title": "nf-core/sarek",
-    "description": "Sarek is a workflow for detecting and annotating germline/somatic variants in WGS, WES and gene panel data. If you require assistance setting up your workflow please contact hutchdatacore@fredhutch.org to discuss data formats and parameters.",
+    "description": "Sarek is a workflow for detecting and annotating germline/somatic variants in WGS, WES and gene panel data.",
     "type": "object",
     "properties": {
       "analysis_type": {
