@@ -1,0 +1,10 @@
+{
+  "transcriptome_dir": "$.dataset.params.refs.transcriptome_dir",
+  "vdj_dir": "$.dataset.params.refs.vdj_dir",
+  "feature_csv": "$.dataset.params.refs.feature_csv",
+  "is_frp": "$.dataset.params.frp.enabled",
+  "frp_samples": "$.dataset.params.frp.samples_table",
+  "include_introns": "$.dataset.params.cellranger.include_introns",
+  "cellranger_version": "$.dataset.params.cellranger.version",
+  "output": "$.dataset.dataPath"
+}

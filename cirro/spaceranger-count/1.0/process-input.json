@@ -1,0 +1,8 @@
+{
+  "ref": "$.dataset.params.ref|/data/custom_SpaceRanger_reference",
+  "probes": "$.dataset.params.ref|/data/probes.csv",
+  "images": "$.dataset.params.images|/data",
+  "image_type": "$.dataset.params.image_type",
+  "spaceranger_version": "$.dataset.params.spaceranger_version",
+  "output": "$.dataset.dataPath"
+}
