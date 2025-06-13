@@ -1,7 +1,7 @@
 {
     "form": {
         "required": [
-            "transcriptsFile"
+            "transcripts_file"
         ],
         "properties": {
             "enforce_connectivity": {
