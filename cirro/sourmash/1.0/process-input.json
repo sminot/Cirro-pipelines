@@ -1,0 +1,6 @@
+{
+    "db_size": "$.dataset.params.db_size",
+    "ksize": "$.dataset.params.k",
+    "threshold_bp": "$.dataset.params.threshold_bp",
+    "output": "$.dataset.dataPath"
+}
