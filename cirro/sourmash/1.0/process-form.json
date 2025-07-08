@@ -9,7 +9,7 @@
                 "enum": [
                     "85k: GTDB R08-RS214 bacterial representatives",
                     "403k: GTDB R08-RS214 all bacteria",
-                    "1.1M: NCBI GenBank (2022) all bacteria",
+                    "1.1M: NCBI GenBank (2022) - bacteria",
                     "None"
                 ]
             },
