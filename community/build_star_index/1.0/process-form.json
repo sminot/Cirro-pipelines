@@ -1,0 +1,35 @@
+{
+  "form": {
+    "type": "object",
+    "properties": {
+      "fasta": {
+        "title": "Reference Genome (FASTA)",
+        "description": "Upload at Pipelines - Manage References - Add Reference",
+        "type": "string",
+        "multiple": false,
+        "pathType": "reference",
+        "file": "**/genome_fasta/**/genome.fasta"
+      },
+      "gtf": {
+        "title": "Reference Genome Features (GTF)",
+        "description": "Upload at Pipelines - Manage References - Add Reference",
+        "type": "string",
+        "multiple": false,
+        "pathType": "reference",
+        "file": "**/genome_gtf/**/genome.gtf"
+      },
+      "sjdbOverhang": {
+        "title": "sjdbOverhang",
+        "description": "Length of the donor/acceptor sequence on each side of the junctions, ideally (mate.length - 1).",
+        "type": "integer",
+        "default": "100"
+      }
+    },
+    "required": [
+      "fasta",
+      "gtf",
+      "sjdbOverhang"
+    ]
+  },
+  "ui": {}
+}

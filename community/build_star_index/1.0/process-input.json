@@ -1,0 +1,6 @@
+{
+  "outdir": "$.dataset.dataPath",
+  "fasta": "$.dataset.params.fasta",
+  "gtf": "$.dataset.params.gtf",
+  "sjdbOverhang": "$.dataset.params.sjdbOverhang"
+}
