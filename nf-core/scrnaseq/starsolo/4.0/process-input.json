@@ -1,16 +1,12 @@
 {
-  "igenomes_base": "s3://pubweb-references/igenomes",
   "input": "samplesheet.csv",
   "outdir": "$.dataset.dataPath",
-  "aligner": "$.dataset.params.alignment_options.aligner",
+  "aligner": "star",
   "protocol": "$.dataset.params.alignment_options.protocol",
-  "skip_cellranger_renaming": "$.dataset.params.alignment_options.skip_cellranger_renaming",
   "star_feature": "$.dataset.params.alignment_options.star_feature",
-  "kb_workflow": "$.dataset.params.alignment_options.kb_workflow",
   "save_align_intermeds": "$.dataset.params.alignment_options.save_align_intermeds",
   "skip_multiqc": "$.dataset.params.skip_tools.skip_multiqc",
   "skip_fastqc": "$.dataset.params.skip_tools.skip_fastqc",
   "skip_cellbender": "$.dataset.params.skip_tools.skip_cellbender",
-  "skip_emptydrops": "$.dataset.params.skip_tools.skip_emptydrops",
-  "genome": "$.dataset.params.reference_genome_options.genome"
+  "skip_emptydrops": "$.dataset.params.skip_tools.skip_emptydrops"
 }

@@ -1,0 +1,69 @@
+{
+  "form": {
+    "type": "object",
+    "properties": {
+      "alignment_options": {
+        "type": "object",
+        "title": "Alignment Options",
+        "description": "Mandatory arguments",
+        "properties": {
+          "protocol": {
+            "title": "Protocol",
+            "description": "The protocol that was used to generate the single cell data, e.g. 10x Genomics v2 Chemistry.",
+            "type": "string",
+            "default": "10XV4",
+            "enum": ["10XV1", "10XV2", "10XV3", "10XV4", "dropseq", "smartseq"]
+          },
+          "star_feature": {
+            "title": "STAR Feature",
+            "description": "Quantification type of different transcriptomic feature. Use GeneFull on pre-mRNA count for single-nucleus RNA-seq reads. Use Gene Velocyto to generate RNA velocity matrix.",
+            "type": "string",
+            "default": "Gene",
+            "enum": ["Gene", "GeneFull", "Gene Velocyto"]
+          },
+          "save_align_intermeds": {
+            "title": "Save Alignment Intermediates",
+            "description": "Specify this parameter to save the intermediate alignment files to the results.",
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": []
+      },
+      "skip_tools": {
+        "type": "object",
+        "title": "Skip Tools",
+        "description": "This section can be used to disable certain tools in the pipeline",
+        "properties": {
+          "skip_multiqc": {
+            "title": "Skip MultiQC Report",
+            "description": "",
+            "type": "boolean",
+            "default": false
+          },
+          "skip_fastqc": {
+            "title": "Skip FastQC",
+            "description": "",
+            "type": "boolean",
+            "default": false
+          },
+          "skip_cellbender": {
+            "title": "Skip cellbender empty drops filter subworkflow",
+            "description": "",
+            "type": "boolean",
+            "default": false
+          },
+          "skip_emptydrops": {
+            "title": "Skip EmptyDrops",
+            "description": "",
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": []
+      }
+    },
+    "required": []
+  },
+  "ui": {}
+}
