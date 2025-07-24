@@ -60,7 +60,7 @@
           "quay.io/biocontainers/star:2.5.3a--0",
           "quay.io/biocontainers/star:2.5.2b--0",
           "quay.io/biocontainers/star:2.5.1b--0",
-          "quay.io/biocontainers/star:2.4.0j--h9ee0642_2",
+          "quay.io/biocontainers/star:2.4.0j--h9ee0642_2"
         ]
       }
     },
