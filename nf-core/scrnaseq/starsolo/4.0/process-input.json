@@ -2,6 +2,7 @@
   "input": "samplesheet.csv",
   "outdir": "$.dataset.dataPath",
   "aligner": "star",
+  "star_index": "$.dataset.params.alignment_options.star_index",
   "protocol": "$.dataset.params.alignment_options.protocol",
   "star_feature": "$.dataset.params.alignment_options.star_feature",
   "save_align_intermeds": "$.dataset.params.alignment_options.save_align_intermeds",

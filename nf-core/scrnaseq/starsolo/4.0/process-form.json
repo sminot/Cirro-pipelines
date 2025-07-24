@@ -7,6 +7,12 @@
         "title": "Alignment Options",
         "description": "Mandatory arguments",
         "properties": {
+          "star_index": {
+            "pathType": "dataset",
+            "title": "STAR Index",
+            "description": "Select the STAR index to align reads against.",
+            "process": "sminot-build-star-index"
+          },
           "protocol": {
             "title": "Protocol",
             "description": "The protocol that was used to generate the single cell data, e.g. 10x Genomics v2 Chemistry.",
