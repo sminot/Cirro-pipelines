@@ -4,19 +4,19 @@
     "properties": {
       "fasta": {
         "title": "Reference Genome (FASTA)",
-        "description": "Upload at Pipelines - Manage References - Add Reference",
+        "description": "Select from the input dataset(s)",
         "type": "string",
         "multiple": false,
-        "pathType": "reference",
-        "file": "**/genome_fasta/**/genome.fasta"
+        "pathType": "dataset",
+        "file": "**/*.f*"
       },
       "gtf": {
         "title": "Reference Genome Features (GTF)",
-        "description": "Upload at Pipelines - Manage References - Add Reference",
+        "description": "Select from the input dataset(s)",
         "type": "string",
         "multiple": false,
-        "pathType": "reference",
-        "file": "**/genome_gtf/**/genome.gtf"
+        "pathType": "dataset",
+        "file": "**/*.g*"
       },
       "sjdbOverhang": {
         "title": "sjdbOverhang",
