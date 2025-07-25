@@ -22,7 +22,7 @@
         "title": "sjdbOverhang",
         "description": "Length of the donor/acceptor sequence on each side of the junctions, ideally (mate.length - 1).",
         "type": "integer",
-        "default": "100"
+        "default": 100
       },
       "container": {
         "title": "STAR Version",
