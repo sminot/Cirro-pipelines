@@ -34,18 +34,23 @@ assert samplesheet.shape[0] > 0, "No FASTQ files detected -- there may be an err
 # Write out to a file
 samplesheet.to_csv("samplesheet.csv", index=None)
 
-# Remove the "/SA" from the STAR index path
-if "star_index" in ds.params:
-    assert ds.params["star_index"].endswith("/SA"), "Expected STAR index path to end with '/SA'"
-    ds.add_param(
-        "star_index",
-        ds.params["star_index"].replace("/SA", ""),
-        overwrite=True
-    )
-    ds.logger.info(f"Updated STAR index path: {ds.params['star_index']}")
-else:
-    ds.logger.warning("No STAR index found in parameters, skipping update.")
+# Flatten the file selection params
+for kw in ["star_index", "gtf"]:
+    if kw in ds.params and len(ds.params[kw]) > 0:
+        ds.add_param(
+            kw,
+            ds.params[kw][0],
+            overwrite=True
+        )
+        ds.logger.info(f"Formatted parameter {kw}: {ds.params[kw]}")
+    else:
+        raise ValueError(f"Missing required parameter: {kw} in alignment options.")
 
-# Make sure that a "gtf" file is provided
-if "gtf" not in ds.params:
-    raise ValueError("No GTF file provided in parameters. Please ensure a GTF file is specified for the STAR alignment.")
+# Remove the "/SA" from the STAR index path
+assert ds.params["star_index"].endswith("/SA"), "Expected STAR index path to end with '/SA'"
+ds.add_param(
+    "star_index",
+    ds.params["star_index"].replace("/SA", ""),
+    overwrite=True
+)
+ds.logger.info(f"Updated STAR index path: {ds.params['star_index']}")
