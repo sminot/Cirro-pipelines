@@ -22,7 +22,7 @@
             "type": "string",
             "multiple": false,
             "pathType": "dataset",
-            "file": "**/gt*"
+            "file": "**/*.g*"
           },
           "protocol": {
             "title": "Protocol",
