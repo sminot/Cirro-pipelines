@@ -1,6 +1,7 @@
 {
   "form": {
     "type": "object",
+    "description": "Required inputs: FASTQs, STAR Index, and GTF file.",
     "properties": {
       "alignment_options": {
         "type": "object",
@@ -8,10 +9,20 @@
         "description": "Mandatory arguments",
         "properties": {
           "star_index": {
-            "pathType": "dataset",
             "title": "STAR Index",
             "description": "Select the STAR index to align reads against.",
-            "process": "sminot-build-star-index"
+            "type": "string",
+            "multiple": false,
+            "pathType": "dataset",
+            "file": "**/SA"
+          },
+          "gtf": {
+            "title": "GTF File",
+            "description": "Select the GTF file to use for annotation.",
+            "type": "string",
+            "multiple": false,
+            "pathType": "dataset",
+            "file": "**/gt*"
           },
           "protocol": {
             "title": "Protocol",
@@ -34,7 +45,7 @@
             "default": false
           }
         },
-        "required": []
+        "required": ["star_index", "gtf", "protocol", "star_feature"]
       },
       "skip_tools": {
         "type": "object",
