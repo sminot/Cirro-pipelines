@@ -10,5 +10,6 @@
   "skip_multiqc": "$.dataset.params.skip_tools.skip_multiqc",
   "skip_fastqc": "$.dataset.params.skip_tools.skip_fastqc",
   "skip_cellbender": "$.dataset.params.skip_tools.skip_cellbender",
-  "skip_emptydrops": "$.dataset.params.skip_tools.skip_emptydrops"
+  "skip_emptydrops": "$.dataset.params.skip_tools.skip_emptydrops",
+  "monochromeLogs": true
 }
