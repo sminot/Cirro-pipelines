@@ -24,6 +24,14 @@
             "pathType": "dataset",
             "file": "**/*.gt*"
           },
+          "fasta": {
+            "title": "FASTA File",
+            "description": "Select the FASTA file to use for reference.",
+            "type": "string",
+            "multiple": false,
+            "pathType": "dataset",
+            "file": "**/*.fa*"
+          },
           "protocol": {
             "title": "Protocol",
             "description": "The protocol that was used to generate the single cell data, e.g. 10x Genomics v2 Chemistry.",
