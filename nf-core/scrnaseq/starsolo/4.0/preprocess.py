@@ -35,7 +35,7 @@ assert samplesheet.shape[0] > 0, "No FASTQ files detected -- there may be an err
 samplesheet.to_csv("samplesheet.csv", index=None)
 
 # Flatten the file selection params
-for kw in ["star_index", "gtf"]:
+for kw in ["star_index", "gtf", "fasta"]:
     if kw in ds.params and len(ds.params[kw]) > 0:
         ds.add_param(
             kw,
