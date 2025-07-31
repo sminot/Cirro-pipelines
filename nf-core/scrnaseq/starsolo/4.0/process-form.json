@@ -77,12 +77,6 @@
             "description": "",
             "type": "boolean",
             "default": false
-          },
-          "skip_emptydrops": {
-            "title": "Skip EmptyDrops",
-            "description": "",
-            "type": "boolean",
-            "default": false
           }
         },
         "required": []
