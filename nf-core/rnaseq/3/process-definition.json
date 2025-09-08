@@ -1,13 +1,14 @@
 {
-  "id": "process-nf-core-rnaseq-3_8",
+  "id": "process-nf-core-rnaseq-3",
   "childProcessIds": [
     "process-hutch-bulk-rna-lymphocyctes-1_0",
     "process-hutch-differential-expression-1_0",
-    "hutch-arcashla-1-0"
+    "hutch-arcashla-1-0",
+    "process-nf-core-differentialabundance-1_5"
   ],
   "dataType": "Gene Expression Summary (nf-core/rnaseq)",
   "name": "Quantify Gene Expression (nf-core/rnaseq)",
-  "desc": "RNA sequencing analysis pipeline using STAR, RSEM, HISAT2 or Salmon with gene/isoform counts and extensive quality control (v3.11.1)",
+  "desc": "RNA sequencing analysis pipeline using STAR, RSEM, HISAT2 or Salmon with gene/isoform counts and extensive quality control",
   "executor": "NEXTFLOW",
   "pipelineTypeOverride": "nf-core",
   "category": "RNA Sequencing",
@@ -16,7 +17,7 @@
     "repository": "GITHUBPUBLIC",
     "script": "main.nf",
     "uri": "nf-core/rnaseq",
-    "version": "3.11.1"
+    "version": "User Defined"
   },
   "allowMultipleSources": true,
   "usesSampleSheet": true,
