@@ -102,24 +102,10 @@ def make_manifest(ds: PreprocessDataset) -> pd.DataFrame:
     return manifest
 
 
-def set_workflow_version(ds: PreprocessDataset):
-
-    workflow_version = ds.params.get("workflow_version")
-    assert workflow_version is not None, "Could not find workflow version"
-
-    ds.logger.info(f'Using workflow version: {workflow_version}')
-
-    os.environ["PW_WORKFLOW_VERSION"] = workflow_version
-    ds.remove_param("workflow_version")
-
-
 if __name__ == "__main__":
 
     # Load the information for this dataset
     ds = PreprocessDataset.from_running()
-
-    # Set the workflow version
-    set_workflow_version(ds)
 
     # Make the samplesheet
     manifest = make_manifest(ds)
@@ -179,10 +165,6 @@ if __name__ == "__main__":
         ds.add_param('spliceai_indel', spliceai_indel, overwrite=True)
         ds.add_param('spliceai_indel_tbi', spliceai_indel_tbi, overwrite=True)
 
-    # workflow is failing due to 'Unknown config attribute `params.vep_version` -- check config file: /root/.nextflow/assets/nf-core/sarek/nextflow.config'
-    # test by hard-coding here
-    ds.add_param('vep_version', '106.1', overwrite=True)
-
     # PON handling
 
     if params.get('analysis_type') == 'Somatic Variant Calling':
@@ -214,17 +196,6 @@ if __name__ == "__main__":
     )
 
     ds.remove_param('wes')
-
-    # Make a stub within the custom_config_base/ folder which is used to import the config
-    os.makedirs("custom_config_base/pipeline/")
-    with open("custom_config_base/pipeline/sarek.config", "wt") as handle:
-        handle.write("""
-    profiles {
-        standard { includeConfig "%s" }
-    }""" % f"{os.getcwd()}/nextflow-override.config")
-    ds.add_param("custom_config_base", f"{os.getcwd()}/custom_config_base")
-    assert os.path.exists("custom_config_base/pipeline/sarek.config")
-    print("Added handle for compute config to custom_config_base/pipeline/sarek.config")
 
     # If an intervals file was not selected, use --no_intervals
     if not ds.params.get("intervals"):
