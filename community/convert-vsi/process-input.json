@@ -1,4 +1,5 @@
 {
   "input_folder": "$.inputs[0].dataPath",
+  "image_format": "$.dataset.params.image_format",
   "output": "$.dataset.dataPath"
 }
