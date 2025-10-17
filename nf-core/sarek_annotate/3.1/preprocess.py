@@ -105,14 +105,7 @@ def preprocess(ds):
     tools = ','.join(map(str, annotation_tool))
 
     ds.add_param('tools', tools, overwrite=True)
-
-    # vep_cache_version (attempt to resolve 'expected numeric, got string' bug).
-    # this gets updated regularly - keep an eye on it / need to think
-    # how to automatically update this. 
     genome = ds.params.get('genome')
-    cache_key = {'GATK.GRCh37': 106, 'GATK.GRCh38': 106, 'GRCm38': 102}
-    vep_cache_version = cache_key[genome]
-    ds.add_param('vep_cache_version', vep_cache_version, overwrite=True)
 
     # if user does not select VEP/snpEff then annotation tool param does not exist.
     # script sets it as empty list, use this to toggle deleting the param to avoid error.
@@ -145,10 +138,6 @@ def preprocess(ds):
         ds.add_param('spliceai_snv_tbi', spliceai_snv_tbi, overwrite=True)
         ds.add_param('spliceai_indel', spliceai_indel, overwrite=True)
         ds.add_param('spliceai_indel_tbi', spliceai_indel_tbi, overwrite=True)
-
-    # workflow is failing due to 'Unknown config attribute `params.vep_version` -- check config file: /root/.nextflow/assets/nf-core/sarek/nextflow.config'
-    # test by hard-coding here
-    ds.add_param('vep_version', '106.1', overwrite=True)
 
     # PON handling
 
