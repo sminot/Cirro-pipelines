@@ -2,7 +2,32 @@
   "form": {
     "type": "object",
     "name": "Convert VSI to OME-TIFF",
-    "properties": {}
+    "required": ["image_format"],
+    "properties": {
+      "image_format": {
+        "type": "string",
+        "title": "Image Format",
+        "description": "Select the image format to convert to OME-TIFF. Any file with this suffix will be converted.",
+        "enum": [
+          "bif",
+          "czi",
+          "dcm",
+          "dicom",
+          "eps",
+          "img",
+          "liff",
+          "ndpi",
+          "pic",
+          "raw",
+          "scn",
+          "svslide",
+          "tif",
+          "tiff",
+          "vms",
+          "vmu"
+        ]
+      }
+    }
   },
   "ui": {}
 }
