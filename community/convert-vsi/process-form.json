@@ -9,22 +9,15 @@
         "title": "Image Format",
         "description": "Select the image format to convert to OME-TIFF. Any file with this suffix will be converted.",
         "enum": [
-          "bif",
           "czi",
           "dcm",
           "dicom",
-          "eps",
-          "img",
-          "liff",
-          "ndpi",
-          "pic",
-          "raw",
+          "gel",
+          "lif",
+          "nd2",
+          "svs",
           "scn",
-          "svslide",
-          "tif",
-          "tiff",
-          "vms",
-          "vmu"
+          "vsi"
         ]
       }
     }
