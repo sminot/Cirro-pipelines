@@ -12,9 +12,9 @@
   "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-spatial-analysis/#cell-segmentation-stardist",
   "code": {
     "repository": "GITHUBPUBLIC",
-    "uri": "CirroBio/nf-segment-stardist",
-    "version": "main",
-    "script": "main.nf"
+    "uri": "CirroBio/nf-cell-segment",
+    "version": "1.0.0",
+    "script": "stardist.nf"
   },
   "computeDefaults": [
     {
