@@ -26,9 +26,9 @@ samplesheet = (
         values="file"
     )
     .rename(columns=lambda i: f"R{int(i)}")
-    .rename(columns=dict(sample="specimen"))
     .reset_index()
-    .reindex(columns=["sample", "R1", "R2"])
+    .rename(columns=dict(sample="specimen"))
+    .reindex(columns=["specimen", "R1", "R2"])
 )
 
 ds.logger.info("Formatted samplesheet:")
