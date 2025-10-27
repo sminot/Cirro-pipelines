@@ -1,5 +1,5 @@
 {
-  "fastq_folder": "$.inputs[0].dataPath",
+  "sample_sheet": "samplesheet.csv",
   "output": "$.dataset.dataPath",
   "genome": "$.dataset.params.reference.genome",
   "min_reads": "$.dataset.params.parameters.min_reads",
