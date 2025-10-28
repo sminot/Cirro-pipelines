@@ -9,7 +9,7 @@
   "code": {
     "repository": "GITHUBPUBLIC",
     "uri": "FredHutch/maddd-seq",
-    "version": "v1.4.1",
+    "version": "main",
     "script": "main.nf"
   },
   "computeDefaults": [
