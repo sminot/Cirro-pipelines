@@ -48,6 +48,8 @@ def make_manifest(ds: PreprocessDataset) -> pd.DataFrame:
     # use different logic to construct the sample sheet.
     # This is intended to capture the scenario when there are multiple
     # pairs of FASTQs for any samples.
+    # Note that this does not work with single-end data, which must
+    # use the pattern above.
     else:
 
         manifest = []
