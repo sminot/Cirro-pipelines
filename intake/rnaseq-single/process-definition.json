@@ -1,0 +1,62 @@
+{
+  "id": "rnaseq",
+  "childProcessIds": [
+    "process-nf-core-rnaseq-3",
+    "process-nf-core-rnaseq-custom-3",
+    "process-hutch-fastqc-1_0",
+    "hutch-gig-map-align-pangenome-1-0",
+    "hutch-sourmash-tax"
+  ],
+  "name": "Single-End RNAseq (FASTQ)",
+  "desc": "FASTQ files generated from single-end sequencing of RNA libraries",
+  "executor": "INGEST",
+  "documentationUrl": "https://<DOCS_SITE>/pipelines/catalog-rna-sequencing/",
+  "code": {
+    "repository": "NA",
+    "uri": ""
+  },
+  "computeDefaults": [],
+  "paramMapJson": "",
+  "formJson": "",
+  "webOptimizationJson": "",
+  "fileMappingRules": [
+    {
+      "description": "FASTQ - Unmatched Barcodes",
+      "isSample": false,
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "Undetermined_S0_R1_001.fastq.gz",
+          "description": "FASTQ (No Barcode Match)",
+          "sampleMatchingPattern": "Undetermined\\S*\\.fastq\\.gz"
+        }
+      ]
+    },
+    {
+      "description": "FASTQs",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName_R1.fastq.gz",
+          "description": "FASTQ",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*)(\\.|_)(?P<readType>R|I|)(?P<read>1|2|3|4)\\.(fq|fastq)(\\.gz|)"
+        },
+        {
+          "exampleName": "SampleName_L001_R1_001.fastq.gz",
+          "description": "FASTQ (Illumina Format - no sample index)",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S]*)_L(?P<lane>\\S*)_(?P<readType>R|I)(?P<read>1|2|3|4)_001\\.fastq\\.gz"
+        },
+        {
+          "exampleName": "SampleName_S1_L001_R1_001.fastq.gz",
+          "description": "FASTQ (Illumina Format - with lane)",
+          "sampleMatchingPattern": "(?P<sampleName>\\S*)_S(?P<libraryIndex>\\S*)_L(?P<lane>\\S*)_(?P<readType>R|I)(?P<read>1|2|3|4)_001\\.fastq\\.gz"
+        },
+        {
+          "exampleName": "SampleName_S1_R1_001.fastq.gz",
+          "description": "FASTQ (Illumina Format - no lane)",
+          "sampleMatchingPattern": "(?P<sampleName>\\S*)_S(?P<libraryIndex>\\S*)_(?P<readType>R|I)(?P<read>1|2|3|4)_001\\.fastq\\.gz"
+        }
+      ]
+    }
+  ]
+}
