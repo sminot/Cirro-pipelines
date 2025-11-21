@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from cirro.helpers.preprocess_dataset import PreprocessDataset
-import os
 import pandas as pd
 
 
@@ -102,6 +101,32 @@ def make_manifest(ds: PreprocessDataset) -> pd.DataFrame:
     return manifest
 
 
+def fix_umi_form_dependencies(ds: PreprocessDataset):
+    """
+    Make sure that the UMI processing options are only provided to the workflow
+    if the appropriate section was enabled in the form. This is necessary because
+    the form data is still populated even if the element is hidden by the
+    deselection of the element driving its dependency.
+    """
+    if ds.params.get("use_fgbio", False) and ds.params.get("use_fastp", False):
+        raise Exception("Either fgbio or fastp may be used for UMI processing, not both")
+
+    # If a tool is disabled, do not populate any of the parameters that it uses
+    for group, elem_list in [
+        ("use_fgbio", ["umi_read_structure", "group_by_umi_strategy"]),
+        ("use_fastp", ["umi_location", "umi_length", "umi_base_skip"])
+    ]:
+        # If the tool is disabled
+        if not ds.params.get(group, False):
+            # Iterate over the elements it uses
+            for elem in elem_list:
+                # Delete it if populated
+                ds.remove_param(elem, force=True)
+
+        # Remove the group key, since it is not expected by the workflow
+        ds.remove_param(group, force=True)
+
+
 if __name__ == "__main__":
 
     # Load the information for this dataset
@@ -200,6 +225,9 @@ if __name__ == "__main__":
     # If an intervals file was not selected, use --no_intervals
     if not ds.params.get("intervals"):
         ds.add_param("no_intervals", True)
+
+    # Fix the UMI form dependencies
+    fix_umi_form_dependencies(ds)
 
     # log all params
     ds.logger.info(ds.params)
