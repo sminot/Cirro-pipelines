@@ -296,33 +296,41 @@
         "title": "Unique Molecular Identifiers",
         "description": "Options for handling Unique Molecular Identifiers (UMIs) in the workflow.",
         "properties": {
-          "umi_in_read_header": {
-            "type": "boolean",
-            "title": "UMI in Read Header",
-            "description": "Move UMIs from fastq read headers to a tag prior to deduplication. Set to true if UMIs are already present in the header of the read, for instance from using OverrideCycles in bclconvert or umi_tools/extract.",
-            "default": false
-          },
-          "use_fgbio": {
-            "type": "boolean",
-            "title": "Use fgbio for UMI processing",
-            "description": "Enable UMI processing using fgbio tools for consensus read generation and deduplication.",
-            "default": false
-          },
-          "use_fastp": {
-            "type": "boolean",
-            "title": "Use fastp for UMI extraction",
-            "description": "Enable UMI extraction from reads using fastp prior to alignment.",
-            "default": false
+          "umi_tool": {
+            "type": "string",
+            "title": "UMI Processing",
+            "default": "none",
+            "enum": ["none", "umi_in_read_header", "use_fgbio", "use_fastp"],
+            "enumNames": [
+              "No UMIs",
+              "UMI in read header",
+              "Use fgbio for UMI processing",
+              "Use fastp for UMI extraction"
+            ]
           }
         },
         "dependencies": {
-          "use_fgbio": {
+          "umi_tool": {
             "oneOf": [
               {
                 "properties": {
-                  "use_fgbio": {
-                    "enum": [true]
-                  },
+                  "umi_tool": {"enum": ["none"]}
+                }
+              },
+              {
+                "properties": {
+                  "umi_tool": {"enum": ["umi_in_read_header"]},
+                  "umi_in_read_header": {
+                    "type": "object",
+                    "title": "UMI in Read Header",
+                    "description": "Move UMIs from fastq read headers to a tag prior to deduplication. Use if UMIs are already present in the header of the read, for instance from using OverrideCycles in bclconvert or umi_tools/extract.",
+                    "properties": {}
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "umi_tool": {"enum": ["use_fgbio"]},
                   "umi_read_structure": {
                     "type": "string",
                     "title": "UMI Read Structure",
@@ -339,20 +347,7 @@
               },
               {
                 "properties": {
-                  "use_fgbio": {
-                    "enum": [false]
-                  }
-                }
-              }
-            ]
-          },
-          "use_fastp": {
-            "oneOf": [
-              {
-                "properties": {
-                  "use_fastp": {
-                    "enum": [true]
-                  },
+                  "umi_tool": {"enum": ["use_fastp"]},
                   "umi_location": {
                     "type": "string",
                     "title": "UMI Location",
@@ -369,13 +364,6 @@
                     "type": "integer",
                     "title": "UMI Base Skip",
                     "description": "Number of bases to skip after the UMI(s) in the read when extracting with fastp. If UMIs are being extracted using fastp, specify the number of bases to skip after the UMI here. This will trim some bases after the UMI."
-                  }
-                }
-              },
-              {
-                "properties": {
-                  "use_fastp": {
-                    "enum": [false]
                   }
                 }
               }

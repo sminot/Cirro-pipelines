@@ -2,6 +2,7 @@
 
 from cirro.helpers.preprocess_dataset import PreprocessDataset
 import pandas as pd
+from typing import List
 
 
 def make_manifest(ds: PreprocessDataset) -> pd.DataFrame:
@@ -101,6 +102,13 @@ def make_manifest(ds: PreprocessDataset) -> pd.DataFrame:
     return manifest
 
 
+def delete_params(ds: PreprocessDataset, param_list: List[str]):
+    """Delete multiple parameters."""
+    for param in param_list:
+        if param in ds.params:
+            ds.remove_param(param, force=True)
+
+
 def fix_umi_form_dependencies(ds: PreprocessDataset):
     """
     Make sure that the UMI processing options are only provided to the workflow
@@ -108,23 +116,39 @@ def fix_umi_form_dependencies(ds: PreprocessDataset):
     the form data is still populated even if the element is hidden by the
     deselection of the element driving its dependency.
     """
-    if ds.params.get("use_fgbio", False) and ds.params.get("use_fastp", False):
-        raise Exception("Either fgbio or fastp may be used for UMI processing, not both")
 
-    # If a tool is disabled, do not populate any of the parameters that it uses
-    for group, elem_list in [
-        ("use_fgbio", ["umi_read_structure", "group_by_umi_strategy"]),
-        ("use_fastp", ["umi_location", "umi_length", "umi_base_skip"])
-    ]:
-        # If the tool is disabled
-        if not ds.params.get(group, False):
-            # Iterate over the elements it uses
-            for elem in elem_list:
-                # Delete it if populated
-                ds.remove_param(elem, force=True)
+    # Group the params based on what approach the user selected
+    fgbio_params = ["umi_read_structure", "group_by_umi_strategy"]
+    fastp_params = ["umi_location", "umi_length", "umi_base_skip"]
 
-        # Remove the group key, since it is not expected by the workflow
-        ds.remove_param(group, force=True)
+    # Get the option selected by the user
+    umi_tool = ds.params.get("umi_tool", "none")
+
+    # If no UMI processing was selected
+    if umi_tool == "none":
+        ds.logger.info("UMIs - user selected no UMI processing")
+        delete_params(ds, fgbio_params + fastp_params)
+
+    # If the UMIs are in the read header
+    elif umi_tool == "umi_in_read_header":
+        ds.logger.info("UMIs - user selected UMIs in read header")
+        ds.add_param("umi_in_read_header", True)
+        delete_params(ds, fgbio_params + fastp_params)
+
+    # Use fgbio for UMI processing
+    elif umi_tool == "use_fgbio":
+        ds.logger.info("UMIs - use fgbio")
+        delete_params(ds, fastp_params)
+
+    # Use fastp for UMI processing
+    elif umi_tool == "use_fastp":
+        ds.logger.info("UMIs - use fastp")
+        delete_params(ds, fgbio_params)
+
+    else:
+        raise Exception(f"Did not expect umi_tool selection: {umi_tool}")
+    
+    ds.remove_param("umi_tool", force=True)
 
 
 if __name__ == "__main__":
