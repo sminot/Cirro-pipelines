@@ -1,5 +1,6 @@
 {
   "input_folder": "$.inputs[0].dataPath",
   "image_format": "$.dataset.params.image_format",
+  "compression": "$.dataset.params.compression",
   "output": "$.dataset.dataPath"
 }

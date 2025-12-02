@@ -2,7 +2,7 @@
   "form": {
     "type": "object",
     "name": "Convert VSI to OME-TIFF",
-    "required": ["image_format"],
+    "required": ["image_format", "compression"],
     "properties": {
       "image_format": {
         "type": "string",
@@ -19,6 +19,21 @@
           "scn",
           "vsi"
         ]
+      },
+      "compression": {
+        "type": "string",
+        "title": "Image Compression",
+        "description": "Select the algorithm used for compressing image data, if needed.",
+        "enum": [
+          "UNCOMPRESSED",
+          "DEFAULT",
+          "JPEG",
+          "J2K,",
+          "J2K_LOSSY",
+          "LZW",
+          "ZLIB"
+        ],
+        "default": "ZLIB"
       }
     }
   },
