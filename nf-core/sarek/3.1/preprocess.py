@@ -136,8 +136,12 @@ def fix_umi_form_dependencies(ds: PreprocessDataset):
 
         # If the UMIs are in the read header, remove the umi_read_structure parameter
         if ds.params.get("umi_in_read_header", False):
-            ds.logger.info("Because the UMIs are taken from the read headers, umi_read_structure will be cleared.")
-            ds.remove_param("umi_read_structure", force=True)
+            ds.logger.info("Because the UMIs are taken from the read headers, umi_read_structure must be set to +T +T.")
+            ds.add_param("umi_read_structure", "+T +T", overwrite=True)
+
+            # There seems to be a bug in the code where sarek will raise an error
+            # if `umi_in_read_header` is not "+T +T "
+            ds.add_param("umi_in_read_header", "+T +T ", overwrite=True)
 
     # Use fastp for UMI processing
     elif umi_tool == "use_fastp":
